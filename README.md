@@ -1,4 +1,4 @@
-# The Road to Hades is Paved with Positive Review: 
+# The Road to Hades is Paved with Positive Reviews: 
 ## Creating a Better Game-Review Sentiment Analyzer
 A Flatiron School Phase 4 Project
 
