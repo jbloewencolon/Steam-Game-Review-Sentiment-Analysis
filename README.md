@@ -15,22 +15,16 @@ We recommend SuperGiant Games to continue focusing on the strong storytelling el
 
 # Data Understanding
 
-To make our recommendations, we analyzed the [Drug Consumptions (UCI)](https://www.kaggle.com/datasets/obeykhadija/drug-consumptions-uci) from Kaggle. As stated on the original database:
+To make our recommendations, we analyzed reviews from the video game Hades, found on Steam. There were initially:
 
-* 1885 respondents
-* 12 attributes per respondent
-    * Personality measurements which include: neuroticism **(Nscore)**, extraversion **(Escore)**, openness to experience **(Oscore)**, agreeableness **(Ascore)**, conscientiousness **(Cscore)**, impulsivity **(Impulsive)**, and sensation seeking **(SS)** 
-    * Demographics like: level of education, age, gender, country of residence and ethnicity. 
-* 18 legal and illegal drugs: alcohol, amphetamines, amyl nitrite, benzodiazepine, cannabis, chocolate, cocaine, caffeine, crack, ecstasy, heroin, ketamine, legal highs, LSD, methadone, mushrooms, nicotine and volatile substance abuse and one fictitious drug (Semeron) which was introduced to identify over-claimers. 
-    * "For each drug they have to select one of the answers: never used the drug, used it over a decade ago, or in the last decade, year, month, week, or day."
+* 228720 Reviews
+* 26 Columns
 
-![violinplot.png](https://github.com/jbloewencolon/Phase-3---Open-to-Psychedelic-Experience/blob/main/Images/violen%20plot%201.png)
-
-In technical terms, the dataset has 1884 rows and 31 columns with a mix of floats and objects. The personality scores (rows 6:12) are measured on a Likert-based scale ranging from 0 (“Strongly Disagree”) to 4 (“Strongly Agree”) and then rendered as a float. The demographics have various sub categories, and the drug values are measured by recency (if ever) the substance has been consumed; CL0 being never used, and CL6 being used in the last day. Since we were primarily focused on understanding psychedelic use based on personality scores, we used violin plots to get a sense of the connection.
+Since the vast majority of reviews were rated positive ('voted_up) we kept our interest primarily to 'reviews' and 'author.playtime_forever.' 
 
 # Step 2: Data Preperation
 
-Since the data contained no null values or duplicate we were able to focus on creating a target column of just psychedelic drugs: cannabis, ecstasy, ketamine, LSD, and mushrooms. We then dropped any rows that indicated used of the fictious drug "Semer" that the original data collectors had included to weed out "overclaimers." Finally, we created a pipeline to streamline our model production going forward and split the data into training and test sets. Given the imbalance of the data set that was already such a small size, we incorporated SMOTE into the pipeline as part of the preprocessing step to increase fairness across our models.
+We dropped all non-English reviews, lemmatized, tokenized, and created new columns for length of review (small, medium, large) and a new binary column depicting above or below-average playtime. Finally, we created a pipeline to streamline our model production going forward and split the data into training and test sets.
 
 # Data Modeling
 
