@@ -125,8 +125,9 @@ Further questions? Contact Jordan Loewen-Colón @ jbloewen@syr.edu
 ```
 ├── data : data used for modeling
 ├── images : images used in PPT and README
-├── draft 1 : previous files from first draft of project
-├── SMOTE version.ipynb : notebook used to pull from API
+├── Sandbox : previous files from earlier drafts of project
+├── Phase 4 Project.ipynb : notebook used to pull from API
 ├── README.md : project information and repository structure
+├── notebook.pdf : a pdf version of the jupyter notebook
 ├── presentation.pdf : the powerpoint presentation used to present data analysis
 
