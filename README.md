@@ -66,18 +66,36 @@ As predicted, that low recall rate on the minority class, and perfect score on t
 
 So it looks like our model might have some fitting on the training data, but does seem to be doing well on the test data. However, tuning the hyperparameters of our XGB model using GridSearchCV, did not actually results in better scores, so we will keep our model as is.
 
-**Model: RFC**
+**Model: TextBlob Sentiment Analysis**
 
+We are going to use TextBlob's NaiveBayesAnalyzer (NBA) for our sentiment analysis. The NBA was trained on movie reviews, the closest we get to game reviews. To help it out, we are going to provide our model with 4 themes to look for in the data. We want to help our client figure out what it was exactly that people enjoyed about their games. Here are the themes:
+![themes.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/themes.PNG)
 
+We want to get sentiments on the general review level and on the sentence level. The more fine-grained the better! These functions take a review as input and calculate the sentiment scores for each sentence in the review and review at large using TextBlob's sentiment analysis. It returns a list of sentiment scores which we can then visualize:
 
-**Model: GBC**
+![sentiment.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/general%20sentiment.PNG)
 
+This histogram gives us more data than our logistic regression. We can see that rather than a simple binary of recommended or not, players had a range of sentiments concerning what they liked about the game. We then decided to create a little program that can pick a review at random and display its content, its polarity, and which words within the review are contributing to that polarity based on the themes we provided. Here is a random review sampling:
 
-# Step 4: Data Understanding
+![sample_review.png]()
 
+Now for some additional verification, we are going to run an unsupervised learning model to see if it covers similar topics. Specifically, we will use Gensim's Latent Dirichlet Allocation (LDA) model. We will prepare the reviews for LDA by removing the stopwords, lemmatizing them, and creating the dictionary and corpus needed for the topic modeling.
 
+![sample_review.png]()
 
-# Conclusion
+It's hard to get a clear theme from these. Lots of action words, so perhaps 'gameplay' is a good theme? Or perhaps it's too general. Let's check the top bigrams to see if they reveal anything else about the review topics:
+
+![sample_review.png]()
+
+Some of these look helpful. We might categorize button_mashy, hack_slash, learning_curve, keyboard_mouse, and fishing_minigame as 'gameplay' topics, and greek_mythology as 'story.' Let's see if we get any more clarity by limiting our bigrams to our pre-selected themes:
+
+![sample_review.png]()
+
+That is definitely more useful! We we are able to see which of the words are associated with each them, and how often those pairs appeared. Now let's step back and see how often our themes appeared more generally. 
+
+![sample_review.png]()
+
+# Step 4: Data Understanding and Conclusions
 
 1) The reviews for the game Hades generally expressed positive sentiment, although the overall level of positivity falls within the range of 0 to 0.25.
 
@@ -86,6 +104,10 @@ So it looks like our model might have some fitting on the training data, but doe
 3) It appears that players may have limited vocabulary when describing their appreciation for the 'music' and 'visuals' in Hades. This suggests that while players find these aspects appealing, they may struggle to articulate their specific likes or preferences regarding the music and visual elements of the game.
    
 Given the computational limitations, making confident predictions about the specific aspects of the game that received positive reviews remains challenging. However, we were successful in adding complexity to the analysis of reviews by incorporating sentiment analysis and exploring themes within the text. This approach has revealed potential insights and indicates the value of delving deeper into the analysis. Further investigation into the sentiment scores of specific themes and their impact on overall sentiment could provide valuable insights into the aspects of the game that resonate with reviewers. Despite the challenges, our findings suggest that there is merit in continuing to explore and refine our analysis methods to gain a deeper understanding of the factors contributing to positive reviews.
+
+# Recomendations
+
+Based on these findings, I would recommend SuperGiant Games to continue focusing on the strong storytelling elements of Hades, as players consistently highlighted this aspect. Additionally, efforts can be made to enhance players' ability to express their positive impressions of the 'music' and 'visuals' by potentially providing prompts or specific questions related to these aspects in reviews or feedback forms. This would help gather more detailed and insightful feedback on the game's audio and visual components.
 
 # Next Steps
 
