@@ -79,7 +79,9 @@ This histogram gives us more data than our logistic regression. We can see that 
 
 ![sample_review.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/review%20sample.PNG)
 
-With this review we can see that it was generally positive, and liked the voice acting (.55), writing (.47), and art (.59), with each recieving positive polarity. Our analyzer did not pick up that "movement" and "replayability" might be part of 'gameplay', but we can adjust that later.
+With this review we can see that it was generally positive, and liked the voice acting (.55), writing (.47), and art (.59), with each receiving positive polarity. Our analyzer did not pick up that "movement" and "replayability" might be part of 'gameplay', but we can adjust that later. 
+
+Unfortunately, adding the new sentiment data to our XGB model didn't improve its predictive capacity. Let's see if we can get any other addtional data that might help with refining for future analysis.
 
 Now for some additional verification, we are going to run an unsupervised learning model to see if it covers similar topics. Specifically, we will use Gensim's Latent Dirichlet Allocation (LDA) model. We will prepare the reviews for LDA by removing the stopwords, lemmatizing them, and creating the dictionary and corpus needed for the topic modeling. When we have it show us the top 10 topics it found, we get this:
 
