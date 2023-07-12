@@ -50,7 +50,7 @@ Since the vast majority of reviews were rated positive ('voted_up') we kept our 
 
 # Step 2: Data Preparation
 
-To begin our data preparation, we dropped all non-English reviews, unnecessary columns, and NaNs. We then lemmatized and tokenized the text so that our models would have a smoother time gleaning information from the data. We created new columns for length of review (small, medium, large, extra large) and a new binary column depicting above or below-average playtime. Finally, we created a pipeline to streamline our model production going forward and split the data into training and test sets.
+To begin our data preparation, we dropped all non-English reviews, unnecessary columns, and NaNs. We then lemmatized and tokenized the text so that our models would have a smoother time gleaning information from the data. We created new columns for length of review (small, medium, large, extra large) to check on the spread of review length for our data set (which came out fairly equitable!) and a new column depicting low, average, or high playtime as our target variable. Finally, we created a pipeline to streamline our model production going forward and split the data into training and test sets.
 
 # Step 3: Data Modeling
 
@@ -64,7 +64,7 @@ As predicted, that low recall rate on the minority class, and perfect score on t
 **Model: XGB**
 ![XGB_first.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/XGB%20first.PNG)
 
-So it looks like our model might have some fitting on the training data, but does seem to be doing well on the test data. However, tuning the hyperparameters of our XGB model using GridSearchCV, did not actually results in better scores, so we will keep our model as is.
+Not great! Our model isn't much better than a coinflip on the training data, and doing even worse on the test data. However, tuning the hyperparameters of our XGB model using GridSearchCV, did not actually results in better scores, so we will keep our model as is. Let's see if we can improve our model with some sentiment analysis:
 
 **Model: TextBlob Sentiment Analysis**
 
