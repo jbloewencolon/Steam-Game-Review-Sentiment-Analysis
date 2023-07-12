@@ -77,23 +77,25 @@ We want to get sentiments on the general review level and on the sentence level.
 
 This histogram gives us more data than our logistic regression. We can see that rather than a simple binary of recommended or not, players had a range of sentiments concerning what they liked about the game. We then decided to create a little program that can pick a review at random and display its content, its polarity, and which words within the review are contributing to that polarity based on the themes we provided. Here is a random review sampling:
 
-![sample_review.png]()
+![sample_review.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/review%20sample.PNG)
 
-Now for some additional verification, we are going to run an unsupervised learning model to see if it covers similar topics. Specifically, we will use Gensim's Latent Dirichlet Allocation (LDA) model. We will prepare the reviews for LDA by removing the stopwords, lemmatizing them, and creating the dictionary and corpus needed for the topic modeling.
+With this review we can see that it was generally positive, and liked the voice acting (.55), writing (.47), and art (.59), with each recieving positive polarity. Our analyzer did not pick up that "movement" and "replayability" might be part of 'gameplay', but we can adjust that later.
 
-![sample_review.png]()
+Now for some additional verification, we are going to run an unsupervised learning model to see if it covers similar topics. Specifically, we will use Gensim's Latent Dirichlet Allocation (LDA) model. We will prepare the reviews for LDA by removing the stopwords, lemmatizing them, and creating the dictionary and corpus needed for the topic modeling. When we have it show us the top 10 topics it found, we get this:
+
+![sample_review.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/topics.PNG)
 
 It's hard to get a clear theme from these. Lots of action words, so perhaps 'gameplay' is a good theme? Or perhaps it's too general. Let's check the top bigrams to see if they reveal anything else about the review topics:
 
-![sample_review.png]()
+![top_bigrams.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/top%20bigrams.PNG)
 
 Some of these look helpful. We might categorize button_mashy, hack_slash, learning_curve, keyboard_mouse, and fishing_minigame as 'gameplay' topics, and greek_mythology as 'story.' Let's see if we get any more clarity by limiting our bigrams to our pre-selected themes:
 
-![sample_review.png]()
+![theme_bigrams.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/them%20bigrams.PNG)
 
 That is definitely more useful! We we are able to see which of the words are associated with each them, and how often those pairs appeared. Now let's step back and see how often our themes appeared more generally. 
 
-![sample_review.png]()
+![theme_counts.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/theme%20appearance%20counts.PNG)
 
 # Step 4: Data Understanding and Conclusions
 
