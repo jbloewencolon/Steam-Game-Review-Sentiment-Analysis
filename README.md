@@ -13,7 +13,7 @@ SuperGiant Games, a video game company, faces a challenge in understanding the s
 # Recommendations:
 We recommend SuperGiant Games to continue focusing on the strong storytelling elements of Hades, as players consistently highlighted this aspect. Additionally, efforts can be made to enhance players' ability to express their positive impressions of the 'music' and 'visuals' by potentially providing prompts or specific questions related to these aspects in reviews or feedback forms. This would help gather more detailed and insightful feedback on the game's audio and visual components.
 
-# Data Understanding
+# Step 1: Data Understanding
 
 To make our recommendations, we analyzed reviews from the video game Hades, found on Steam. There were initially:
 
@@ -52,7 +52,7 @@ Since the vast majority of reviews were rated positive ('voted_up) we kept our i
 
 We dropped all non-English reviews, lemmatized, tokenized, and created new columns for length of review (small, medium, large) and a new binary column depicting above or below-average playtime. Finally, we created a pipeline to streamline our model production going forward and split the data into training and test sets.
 
-# Data Modeling
+# Step 3: Data Modeling
 
 Our first model was a simple logistic regression. Starting with a logistic regression model offers interpretability and simplicity, serving as an efficient method to establish baseline performance for binary classification, such as 
 
@@ -71,7 +71,7 @@ Our first model was a simple logistic regression. Starting with a logistic regre
 **Model: GBC**
 
 
-# Data Understanding
+# Step 4: Data Understanding
 
 
 
