@@ -46,23 +46,25 @@ To make our recommendations, we analyzed reviews from the video game Hades, foun
     25. timestamp_dev_responded
     26. developer_response
 
-Since the vast majority of reviews were rated positive ('voted_up) we kept our interest primarily to 'reviews' and 'author.playtime_forever.' 
+Since the vast majority of reviews were rated positive ('voted_up') we kept our interest primarily on 'reviews' and 'author.playtime_forever.' 
 
 # Step 2: Data Preparation
 
-We dropped all non-English reviews, lemmatized, tokenized, and created new columns for length of review (small, medium, large) and a new binary column depicting above or below-average playtime. Finally, we created a pipeline to streamline our model production going forward and split the data into training and test sets.
+To begin our data preparation, we dropped all non-English reviews, unnecessary columns, and NaNs. We then lemmatized and tokenized the text so that our models would have a smoother time gleaning information from the data. We created new columns for length of review (small, medium, large, extra large) and a new binary column depicting above or below-average playtime. Finally, we created a pipeline to streamline our model production going forward and split the data into training and test sets.
 
 # Step 3: Data Modeling
 
-Our first model was a simple logistic regression. Starting with a logistic regression model offers interpretability and simplicity, serving as an efficient method to establish baseline performance for binary classification, such as 
+Our first model was a simple logistic regression. Starting with a logistic regression model offers interpretability and simplicity, serving as an efficient method to establish baseline performance for binary classification. We used it to verify that our model would overfit if we focused just on predicting whether a review was positive or not based on review content.
 
-**RFC Feature Importances:**
-![RFC featureimport.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/theme%20appearance%20counts.PNG)
+**Logistic Regression**
+![f1_log_reg.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/f1%20for%20log%20reg.PNG)
 
+As predicted, that low recall rate on the minority class, and perfect score on the majority class, does not end up telling us much about our data. So let's change tactics for our more complex models. Rather than trying to predict the positivity of a review based on its content, let's see if we can predict the length of a review by whether or not a player plays an above or below average amount. Because our data set is so large, we will only use a subset of the total data.
 
-**Model: Logistic Regression**
+**Model: XGB**
+![XGB_first.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/XGB%20first.PNG)
 
-
+So it looks like our model might have some fitting on the training data, but does seem to be doing well on the test data. However, tuning the hyperparameters of our XGB model using GridSearchCV, did not actually results in better scores, so we will keep our model as is.
 
 **Model: RFC**
 
