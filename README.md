@@ -1,6 +1,5 @@
 # The Road to Hades is Paved with Positive Reviews: 
 ## Creating a Better Game-Review Sentiment Analyzer
-A Flatiron School Phase 4 Project
 
 ![machine_sentiment.png](https://github.com/jbloewencolon/Phase-4-Game-Sentiment-Analyzer/blob/main/Images/machine%20sentiment.png)
     
