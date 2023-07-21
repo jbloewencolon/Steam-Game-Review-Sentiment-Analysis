@@ -123,12 +123,12 @@ Further questions? Contact Jordan Loewen-Colón @ jbloewen@syr.edu
 
 ## Repository Structure
 
-```diff
-- [data](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Data) : data used for modeling
-- [images](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Images) : images used in PPT and README
-- [Sandbox](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Sandbox) : previous files from earlier drafts of project
-- [game-review-sentiment-analysis.ipynb](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/game-review-sentiment-analysis.ipynb) : notebook used to pull from API
-- [README.md](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/README.md) : project information and repository structure
-- [presentation.pdf](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/presentation.pdf) : the PowerPoint presentation used to present data analysis
+
+├── [data](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Data) : data used for modeling
+├── [images](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Images) : images used in PPT and README
+├── [Sandbox](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Sandbox) : previous files from earlier drafts of project
+├── [game-review-sentiment-analysis.ipynb](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/game-review-sentiment-analysis.ipynb) : notebook used to pull from API
+├── [README.md](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/README.md) : project information and repository structure
+├── [presentation.pdf](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/presentation.pdf) : the PowerPoint presentation used to present data analysis
 
 
