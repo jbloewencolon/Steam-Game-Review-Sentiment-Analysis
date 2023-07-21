@@ -120,11 +120,11 @@ I'd like to check the sentiment scores for each of our themes. So I need code th
 For a full analysis please check the Jupyter Notebook or slide presentation.
 Further questions? Contact Jordan Loewen-Colón @ jbloewen@syr.edu
 
+
 ## Repository Structure
 
 
-```
-├── [data](jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Data) : data used for modeling
+├── [data](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Data) : data used for modeling
 ├── [images](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Images) : images used in PPT and README
 ├── [Sandbox](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/tree/main/Sandbox) : previous files from earlier drafts of project
 ├── [game-review-sentiment-analysis.ipynb](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/game-review-sentiment-analysis.ipynb) : notebook used to pull from API
