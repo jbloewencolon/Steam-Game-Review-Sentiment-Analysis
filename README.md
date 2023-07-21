@@ -14,7 +14,7 @@ We recommend SuperGiant Games continue to focus on their **storytelling**, as pl
 
 # Step 1: Data Understanding
 
-To make our recommendations, we analyzed reviews from the video game Hades, found on Steam. There were initially:
+To make our recommendations, we analyzed reviews from the video game Hades, found on Steam. We used a special jupyter model (steam_import) to pull the data using the Steam API. That code can be found [here](https://github.com/jbloewencolon/Game-Review-Sentiment-Analyzer/blob/main/Sandbox/API%20Import%20Steam%20and%20Preprocess%20Data.ipynb). Our initial data looked like this:
 
 * 228720 Reviews
 * 26 Columns
