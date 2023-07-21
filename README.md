@@ -5,12 +5,12 @@
     
 By Jordan Loewen-Colón July 11th 2023
 
-# The Business Problem
+# The "Business Problem"
 
-SuperGiant Games, a video game company, faces a challenge in understanding the specific aspects of their games that players enjoy. The primary hurdle is the lack of detailed information available in the reviews from Steam, the largest aggregator of game reviews. While Steam provides a binary recommendation status, it does not offer insights into the underlying reasons behind players' preferences. To address this, SuperGiant Games has assigned us the task of developing a model that can analyze game reviews and provide a more comprehensive and nuanced understanding of what players appreciate about their games. By leveraging advanced techniques, we aim to uncover valuable insights that go beyond simple recommendations, allowing SuperGiant Games to gain a deeper understanding of player preferences and further enhance their game development strategies.
+SuperGiant Games faces a challenge in understanding the specific aspects of their games that players enjoy. The primary hurdle is the lack of detailed information available in the reviews from Steam, the largest aggregator of game reviews. While Steam provides a binary recommendation status, it does not offer insights into the underlying reasons behind players' preferences. To address this, SuperGiant Games has assigned us the task of developing a model that can analyze game reviews and provide a more comprehensive and nuanced understanding of what players appreciate about their games. By leveraging advanced techniques, we aim to uncover valuable insights beyond simple recommendations, allowing SuperGiant Games to better understand player preferences and further enhance their game development strategies.
 
 # Recommendations:
-We recommend SuperGiant Games to continue focusing on the strong storytelling elements of Hades, as players consistently highlighted this aspect. Additionally, efforts can be made to enhance players' ability to express their positive impressions of the 'music' and 'visuals' by potentially providing providing in-game prompts, specific key words or phrases, or specific questions related to these aspects in reviews or feedback forms. This would help gather more detailed and insightful feedback on the game's audio and visual components.
+We recommend SuperGiant Games continue to focus on their **storytelling**, as players consistently highlighted this aspect. Additionally, efforts can be made to enhance players' ability to express their positive impressions of the 'music' and 'visuals' by potentially providing in-game prompts, specific keywords or phrases, or specific questions related to these aspects in reviews or feedback forms. This would help gather more detailed and insightful feedback on the game's audio and visual components.
 
 # Step 1: Data Understanding
 
